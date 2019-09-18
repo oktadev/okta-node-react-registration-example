@@ -25,11 +25,11 @@ export default withAuth(class Navigation extends React.Component {
     if (this.state.authenticated === null) return null;
     const authNav = this.state.authenticated ?
       <ul className="auth-nav">
-        <li><a href="javascript:void(0)" onClick={this.props.auth.logout}>Logout</a></li>
+        <li><a href="javascript:void(0)" onClick={() => this.props.auth.logout()}>Logout</a></li>
         <li><Link to="/profile">Profile</Link></li>
       </ul> :
       <ul className="auth-nav">
-        <li><a href="javascript:void(0)" onClick={this.props.auth.login}>Login</a></li>
+        <li><a href="javascript:void(0)" onClick={() => this.props.auth.login()}>Login</a></li>
         <li><Link to="/register">Register</Link></li>
       </ul>;
     return (
