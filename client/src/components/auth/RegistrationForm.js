@@ -5,7 +5,7 @@ import { withAuth } from '@okta/okta-react';
 import config from '../../app.config';
 
 export default withAuth(class RegistrationForm extends React.Component{
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       firstName: '',
@@ -36,20 +36,23 @@ export default withAuth(class RegistrationForm extends React.Component{
     this.checkAuthentication();
   }
 
-  handleFirstNameChange(e){
+  handleFirstNameChange(e) {
     this.setState({firstName:e.target.value});
   }
+
   handleLastNameChange(e) {
     this.setState({ lastName: e.target.value });
   }
+
   handleEmailChange(e) {
     this.setState({ email: e.target.value });
   }
+
   handlePasswordChange(e) {
     this.setState({ password: e.target.value });
   }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
     fetch('/api/users', { 
       method: 'POST', 
